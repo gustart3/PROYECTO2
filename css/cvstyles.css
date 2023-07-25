@@ -82,8 +82,10 @@ header{
   align-items: center;
   height: 50px;
   transition: all 300ms;
-  font-size: 14px;
   filter: drop-shadow(0px 5px 5px rgb(23, 24, 24));
+}
+.header2 h2{
+  font-size: 14px;
 }
 
 .header2 .logo01{
@@ -100,12 +102,13 @@ header{
 #contact.section{
   background-color: skyblue;
   margin: 0;
-  margin-bottom: 100px;
+  margin-bottom: 200px;
   margin-top: 100px;
   margin-left: 12%;
   min-height: 50vmax;
   height: 100%;
   width: 80%;
+ 
 }
 
 @media (max-width:1000px) {
@@ -470,4 +473,4 @@ body .images .image:nth-child(3) {
 body .images .image:nth-child(2) {
   display: none;
 }
-} 
+}}

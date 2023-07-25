@@ -4,10 +4,8 @@ let prevY = window.scrollY;
  window.addEventListener('scroll', function(){
   if(prevY <= 20) {
     div.classList.remove('header2');
-  console.log('volviendo al top');
   }else{
     div.classList.add('header2');
-    console.log('bajando');
   }
   prevY = window.scrollY;
  });
@@ -16,7 +14,7 @@ let prevY = window.scrollY;
 function functionScroll() {
   var section = document.querySelectorAll(".section"),
       sections = {}, i = 0;
-
+  console.log(section);
 Array.prototype.forEach.call(section, function(e) {
   sections[e.id] = e.offsetTop;
 });
