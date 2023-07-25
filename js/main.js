@@ -1,30 +1,5 @@
- /*
- function functionScroll() {
-    var section = document.querySelectorAll(".section"),
-        sections = {}, i = 0;
-
-  Array.prototype.forEach.call(section, function(e) {
-    sections[e.id] = e.offsetTop;
-  });
-
-    for (i in sections) {
-      if (sections[i] <= window.scrollY +250) {
-        document.querySelector('.activo').classList.remove('activo');
-        document.querySelector('a[href*=' + i + ']').classList.add('activo');
-
-     
-
-      }
-    }
-  }
-
-  window.addEventListener('scroll', functionScroll);
-  window.addEventListener('resize', functionScroll);
-
-//de arriba hasta aca todo sirve
-*/
+//para cambiar el header
 const div = document.querySelector ('header')
-//console.log(div.innerHTML);
 let prevY = window.scrollY;
  window.addEventListener('scroll', function(){
   if(prevY <= 20) {
@@ -37,9 +12,7 @@ let prevY = window.scrollY;
   prevY = window.scrollY;
  });
 
-
-
-
+//para aplicar la clase a la seccion activa en el header
 function functionScroll() {
   var section = document.querySelectorAll(".section"),
       sections = {}, i = 0;
@@ -55,12 +28,11 @@ Array.prototype.forEach.call(section, function(e) {
     }
   }
 }
-
 window.addEventListener('scroll', functionScroll);
 window.addEventListener('resize', functionScroll);
   
 
-
+//galeria de imagenes
 // Seleccionamos todos los elementos que contengan la clase .image
 const image = document.querySelectorAll('.image');
 // creamos un ciclo for of para cada uno de nuestras imagenes del array y el .entries nos devolvera la propiedad clave:valor

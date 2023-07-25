@@ -46,8 +46,6 @@ main {
   margin:auto;  
 }
 
-
-
 header{
   display:flex;
   justify-content: space-evenly;
@@ -73,8 +71,6 @@ header{
   transition: all 300ms;
 }
 
-
-
 .header2 {
   width: 100%;
   margin: auto;
@@ -90,7 +86,6 @@ header{
   filter: drop-shadow(0px 5px 5px rgb(23, 24, 24));
 }
 
-
 .header2 .logo01{
   width: 30px;   
   border-radius: 50%;
@@ -102,16 +97,6 @@ header{
   animation: none;
 }
 
-/*.header2 h2{
-  display: flex;
-  flex-direction: column;
-  margin-top: 10px;
-  padding-top: 3px;
-  align-items: start;
-  transition: all 300ms;
-  font-size: 14px;
- 
-}*/
 #contact.section{
   background-color: skyblue;
   margin: 0;
@@ -122,7 +107,6 @@ header{
   height: 100%;
   width: 80%;
 }
-
 
 @media (max-width:1000px) {
   #home{
@@ -138,11 +122,8 @@ header{
     min-height: 50vmax;
     height: 100%;
     width: 80%;
-  }
- 
-  
+  } 
 }
-
 
 .logo01{
   width: 40px;   
@@ -211,7 +192,6 @@ ul {
     list-style: none;
 }
 
-
 .logo{
   margin-top: 10px;
   width:60px;
@@ -231,7 +211,6 @@ figure{
   margin: auto;
 }
 
-
 #contact {
   background-color:rgba(122, 114, 155, 0.3);
   border-radius: 30px;
@@ -248,7 +227,6 @@ figure{
 #myself{
   padding-bottom: 30px;
 }
-
 
 .gif-menu{ display:flex;  
 }
@@ -283,28 +261,17 @@ figure{
 .enlace1:hover {
   background-color: rgb(214, 212, 212);
   border-radius: 25px;
-  transition: all 600ms;
-  
-  
+  transition: all 600ms; 
 } 
-
-/*.tab:target ~ .tab:last-of-type>a {
-  background-color: var(--tabs-dark-color); 
-  z-index: 0; 
-}*/
 
 .tabset > input[type="radio"] {
   position: absolute;
   left: -200vw;
-  
 }
 
 /*esto controla las visivilidad de las pestañas*/
-
-
 .tabset .tab-panel {
-  display: none
-  
+  display: none 
 } 
 .tabset > input:first-child:checked~ .tab-panels > .tab-panel:first-child,
 .tabset > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2),
@@ -313,24 +280,7 @@ figure{
  {
   display:inline-block;
   justify-content: space-between;
-
 }
-/*esto controla el aspecto del contenido de las pestañas*/
-
-
-/*.tabset > label {
-  position: relative;
-  display: inline-block;
-  justify-content: space-around;
-  margin-left: 1%;
-  border: 50px solid transparent;
-  border-bottom: 0;
-  cursor: pointer;
-  background-color: var(--tabs-dark-color);
-  padding: 2px;
-  border: var(--tabs-border-size) solid var(--tabs-border-color);
-  border-bottom: 0;
-}*/
 
 footer{
   background-color:skyblue;
@@ -340,53 +290,6 @@ footer{
   border-radius: 20px 20px 0 0 ;
   box-shadow: 0px 0px 10px 15px #5f5f5f;
 }
-/*
-.seleccionado{
-  font-size: 30px;
-  text-decoration: underline;
-}
-article{
-  padding-bottom: 30px;
-}
-
-*/
-
-*/
-/* Para que los enlaces hereden el color de texto y no tengan subrayado */
-
-
-
-
-/*header {
-  display: flex;
-  justify-content: center;
-
-  text-align: end;
-  flex-direction: column-reverse;
-  position:fixed;
-  width:100%;
-  height: 90px;
-  z-index: 1;
-  padding: 5px;
-  background-color:#fbfbfb;
-  filter: drop-shadow(0px 7px 21px rgb(37, 37, 37));
-  overflow: hidden;
- 
-  }*/
-/*
-
-
-
-
-
-
-
-#curri{
-  padding-top: 50px;
-}
-  
-
-
 
 .cv{
     padding: 15px;
@@ -395,22 +298,6 @@ article{
     border-width: 0px;
     font-size: 20px;
 }
-
-  
- 
-*/
-  /*prueba*/
-  
- /* html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-}*/
- 
-
-
-
-
 
 *, *:before, *:after {
   box-sizing: border-box;
@@ -449,8 +336,6 @@ article{
 }
 
 body{
-  /*display: flex;
-  justify-content: center;*/
   height: 100vh;
   align-items: center;
   font-family: 'Caveat', cursive;
@@ -468,31 +353,30 @@ body .images {
   align-items: stretch;
   overflow: hidden;
   min-width: 600px;
-  max-width: 900px;
+  max-width: 1200px;
   width: calc(100% - 100);
-  height: 400px;
- 
+  height: 600px;
+  width: 1100px;
 }
 
 body .images .image {
   position: relative;
   overflow: hidden;
-  min-width: 60px;
+  min-width: 50px;
   margin: 10px;
   background-size: auto 100%;
   background-position: center;
   cursor: pointer;
   transition: 0.5s cubic-bezier(0.1,0.1,0.1,0.1);  
-
 }
  
 body .images .image.active {
-  flex-grow: 10000;
+  flex-grow: 100000;
   scale: (1.2);
   max-width: 600px;
   margin: 0;
   border-radius: 25px;
-  background-size: auto 100%;
+  background-size: auto 110%;
   box-shadow: px 0px 5px 0px #5f5f5f;
 }
 
@@ -538,8 +422,6 @@ body .images .image .label .icon {
   color: var(--dark);
 }
 
-
-
 body .images .image .label .info{
   display: flex;
   flex-direction: column;
@@ -547,12 +429,14 @@ body .images .image .label .info{
   color: var(--light);
 }
 
-
 body .images .image .label .info .main{
   font-weight: bold;
   font-size: 1.2rem; 
 }
-
+@media screen and (max-width: 900px) {
+  body .images{
+    height:60vh;
+}
 @media screen and (max-width: 718px) {
   body .images{
       min-width: 520px;
@@ -586,5 +470,4 @@ body .images .image:nth-child(3) {
 body .images .image:nth-child(2) {
   display: none;
 }
-}
-  
+} 
