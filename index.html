@@ -12,10 +12,18 @@
 
 <header>
     <img class="logo01" src="img/Screenshot_20230218-101732-521.png">  
-    <a class="active" href="#home" aria-label="ir a la seccion inicio"><h2><i class="bi bi-house"></i>Inicio</h2></a>
-    <a href="#CV"><h2><i class="bi bi-file-earmark-person"></i>CV</h2></a>
-    <a href="#contact"><h2><i class="bi bi-person-lines-fill"></i>Contacto</h2></a> 
-    <a href="#extras"><h2><i class="bi bi-images"></i>Extra</h2></a></div> 
+    <a class="active" href="#home" aria-label="ir a la seccion inicio"><h2><i class="bi bi-house"></i>Inicio</h2></a><h3><i class="bi bi-house oculto"></i></h3>
+    <a href="#CV"><h2><i class="bi bi-file-earmark-person"></i>CV</h2></a><h3><i class="bi bi-file-earmark-person oculto"></i></h3>
+    <a href="#contact"><h2><i class="bi bi-person-lines-fill"></i>Contacto</h2></a> <h3><i class="bi bi-person-lines-fill oculto"></i></h3>
+    <a href="#extras"><h2><i class="bi bi-images"></i>Extras</h2><h3><i class="bi bi-images oculto"></i></h3></a></div> 
+        <div class="row">
+            <div class="col text-center">
+                <label id="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div> 
 </header>
 
 <body> 
@@ -84,8 +92,7 @@
                  </div>
             </div>
 
-        <div class="section" id="extras">
-                
+        <div class="section" id="extras">   
             <section class="images">
                 <div class="image active" style="background-image: url(img/img/lesluthiers.jpg);">
                     <div class="label">

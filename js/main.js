@@ -14,7 +14,6 @@ let prevY = window.scrollY;
 function functionScroll() {
   var section = document.querySelectorAll(".section"),
       sections = {}, i = 0;
-  console.log(section);
 Array.prototype.forEach.call(section, function(e) {
   sections[e.id] = e.offsetTop;
 });
@@ -51,3 +50,14 @@ for (let [i, infoselect] of info.entries()) {
     imageSelected.classList.MouseEvent('active')
   })
 }
+
+
+const colorSwitch = document.querySelector('#switch input[type="checkbox"]');
+            function cambiaTema(ev){
+                if(ev.target.checked){
+                    document.documentElement.setAttribute('tema', 'light');
+                } else {
+                    document.documentElement.setAttribute('tema', 'dark');
+                }
+            }
+            colorSwitch.addEventListener('change', cambiaTema);
