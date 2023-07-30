@@ -1,63 +1,122 @@
-//para cambiar el header
-const div = document.querySelector ('header')
-let prevY = window.scrollY;
- window.addEventListener('scroll', function(){
-  if(prevY <= 20) {
-    div.classList.remove('header2');
-  }else{
-    div.classList.add('header2');
-  }
-  prevY = window.scrollY;
- });
+// Función para alternar entre los modos de color
+function toggleMode() {
+  const body = document.body;
+  body.classList.toggle('dark-mode');
+  body.classList.toggle('light-mode');
 
-//para aplicar la clase a la seccion activa en el header
-function functionScroll() {
-  var section = document.querySelectorAll(".section"),
-      sections = {}, i = 0;
-Array.prototype.forEach.call(section, function(e) {
-  sections[e.id] = e.offsetTop;
+  // Guardar el modo seleccionado en localStorage
+  const currentMode = body.classList.contains('dark-mode') ? 'dark' : 'light';
+  saveMode(currentMode);
+}
+
+// Verificar y aplicar el modo almacenado en localStorage (al recargar la página)
+document.addEventListener('DOMContentLoaded', () => {
+  const savedMode = localStorage.getItem('mode');
+  if (savedMode === 'dark') {
+    document.body.classList.add('dark-mode');
+  } else {
+    document.body.classList.add('light-mode');
+  }
 });
 
-  for (i in sections) {
-    if (sections[i] <= window.pageYOffset +100) {
-      document.querySelector('.active').classList.remove('active');
-      document.querySelector('a[href*=' + i + ']').classList.add('active');
+// Guardar el modo seleccionado en localStorage
+function saveMode(mode) {
+  localStorage.setItem('mode', mode);
+}
+
+// Obtener el elemento del header
+const header = document.querySelector("header");
+
+// Función para verificar si hay algún enlace interno activo
+function isInternalLinkActive() {
+  return document.querySelector("a[href^='#']:active");
+}
+
+// Función para cambiar el fondo del header según la posición del scroll y los enlaces internos activos
+function updateHeaderScroll() {
+  if (window.scrollY > 100 || isInternalLinkActive()) {
+    header.classList.add("header2");
+  } else {
+    header.classList.remove("header2");
+  }
+}
+
+// Añadir un listener para el evento 'scroll' que llame a la función updateHeaderScroll
+window.addEventListener("scroll", updateHeaderScroll);
+
+// Añadir un listener para el evento 'click' en el documento
+document.addEventListener("click", function (event) {
+  // Si el clic se originó desde un enlace interno
+  if (event.target.tagName === "A" && event.target.getAttribute("href").startsWith("#")) {
+    // Esperar un breve instante y luego actualizar el estado del header
+    setTimeout(updateHeaderScroll, 10);
+  }
+});
+
+// Función para aplicar la clase 'active' al enlace correspondiente a la sección activa en el header
+function functionScroll() {
+  const sections = document.querySelectorAll(".section");
+
+  let activeSectionId = null;
+  for (const section of sections) {
+    const rect = section.getBoundingClientRect();
+    if (rect.top <= 100 && rect.bottom >= 100) {
+      activeSectionId = section.getAttribute("id");
+      break;
+    }
+  }
+
+  const headerLinks = document.querySelectorAll("header a");
+  for (const link of headerLinks) {
+    if (link.getAttribute("href") === `#${activeSectionId}`) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
     }
   }
 }
-window.addEventListener('scroll', functionScroll);
-window.addEventListener('resize', functionScroll);
-  
+
+// Agregar un listener para el evento 'DOMContentLoaded'
+document.addEventListener("DOMContentLoaded", function() {
+  functionScroll(); // Llamar a la función al cargar la página para establecer el enlace activo correctamente
+});
+
+// Agregar un listener para el evento 'scroll' que llame a la función functionScroll
+window.addEventListener("scroll", functionScroll);
+window.addEventListener("resize", functionScroll);
+
+
 
 //galeria de imagenes
 // Seleccionamos todos los elementos que contengan la clase .image
 const image = document.querySelectorAll('.image');
-// creamos un ciclo for of para cada uno de nuestras imagenes del array y el .entries nos devolvera la propiedad clave:valor
+
+// creamos un ciclo for of para cada una de nuestras imágenes del array
 for (let [i, imageSelected] of image.entries()) {
-    // Luego le decimos al image seleccionado que ejecute la función focus que a su vez ejecutara el resetFocus el cual eliminara la clase active de cualquiera de las imagenes del array, luego al image seleccionado le agregara la clase active
-    imageSelected.addEventListener('click', function focus(){
-        resetFocus();
-        imageSelected.classList.toggle('active')
-    })
+  // Luego le decimos al image seleccionado que ejecute la función focus que a su vez ejecutará el resetFocus el cual eliminará la clase active de cualquiera de las imágenes del array, luego al image seleccionado le agregará la clase active
+  imageSelected.addEventListener('click', function focus(){
+    resetFocus();
+    imageSelected.classList.toggle('active');
+  });
 }
+
 function resetFocus() {
-    image.forEach(i => i.classList.remove('active'))
-}
-const ocult = document.querySelectorAll('.info');
-for (let [i, infoselect] of info.entries()) {
-  imageSelected.addEventListener('mouseover', function quitar(){
-    resetQuitar();
-    imageSelected.classList.MouseEvent('active')
-  })
+  image.forEach(i => i.classList.remove('active'));
 }
 
 
-const colorSwitch = document.querySelector('#switch input[type="checkbox"]');
-            function cambiaTema(ev){
-                if(ev.target.checked){
-                    document.documentElement.setAttribute('tema', 'light');
-                } else {
-                    document.documentElement.setAttribute('tema', 'dark');
-                }
-            }
-            colorSwitch.addEventListener('change', cambiaTema);
+
+
+
+
+
+window.addEventListener('scroll', function() {
+  const header = document.querySelector('.header2');
+  header.classList.toggle('scrolled', window.scrollY > 0);
+});
+
+
+
+
+
+

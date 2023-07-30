@@ -1,80 +1,68 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Edu+SA+Beginner:wght@400;700&family=Lato:wght@400;700&display=swap');/* Reset */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
-   /* transition: all 300ms;*/
+:root {
+  --primary-color: #0C3E5B;
+  --secondary-color: #1A6081;
+  --accent-color: #BC9AB3;
+  --background-light: #BC9AB3;
+  --background-dark: #1F1C2C;
+  --text-light: #1F1C2C;
+  --text-dark: #BC9AB3;
+  --btn-background: #70436E;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilos para el modo diurno */
+body.light-mode {
+  background-color: var(--background-light);
+  color: var(--text-light);
+}
+
+/* Estilos para el modo oscuro */
+body.dark-mode {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+/* Contenedor del header */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 10px;
+}
+
+/* Logo o título del sitio */
+.header-logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Estilos para la barra de navegación */
+.nav-menu {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px;
+  transition: opacity 0.3s ease, color 0.3s ease;
 }
 
 
-/*Botón de cambio de tema*/
-
-#switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-  z-index: 5;
-
+.nav-link:hover {
+  opacity: 0.8;
+  background-color: var(--secondary-color);
+  border-radius: 5px;
 }
 
-#switch input { 
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color:var(--color-mediumDark);
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color:var(--color-intenseLight);
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-input:checked + .slider {
-  background-color: var(--color-lightLight);
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 3px var(--color-intenseDark);
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
-
-
-
-
+/*mio*/
 
 a{
   color: inherit;
@@ -82,7 +70,7 @@ a{
  }
 
  a:hover {
-  background-color: cadetblue;
+  background-color: var(--color-fuente);
   padding:8px;
   padding-bottom: 8px;
   border-radius: 20px 20px;
@@ -108,6 +96,13 @@ p{
 a.enlace1{
   margin-top: 50px;
 }
+
+
+
+
+
+
+
 /* Este max-width es para que el contenido no se "estire" demasiado hacia los costados y
 el margin: auto; para tenerlo centrado fácilmente ;)*/
 main {
@@ -126,9 +121,9 @@ header{
   position: fixed;
   top: 0;
   left: 0;
- background-color:white;
+ background-color: var(--color-intenseLight);
   box-shadow: 0 0 10px 0 #5f5f5f;
-  font-size: 16px;
+  font-size: 28px;
 }
 header .oculto{
   display: none;
@@ -145,43 +140,145 @@ header .oculto{
   transition: all 300ms;
 }
 
+
+/* Estilos para el header2 */
 .header2 {
   width: 100%;
   margin: auto;
-  background-color:var(--color-mediumLight);
+  background-color: transparent;
+  transition: background-color 0.3s ease; 
   color: var(--color-mediumDark);
   opacity: 90%;
   position: fixed;
-  display:flex;
-  justify-content: space-evenly;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   height: 50px;
+  padding: 20px;
+  background-color: #1F1C2C;
+  color: #fff;
+  transition: background-color 0.3s ease;
   transition: all 300ms;
-  filter: drop-shadow(0px 5px 5px rgb(23, 24, 24));
+  box-shadow: 0 5px 5px rgba(23, 24, 24, 0.5);
   z-index: 3;
 }
-.header2 h2{
+/* Estilo para ocultar el texto en el header2 */
+.header2 a .texto {
   display: none;
 }
 
+/* Estilos para ocultar el texto en header2 y mostrar solo los iconos */
+header.header2 h2 {
+  display: none;
+  position: relative;
+  font-size: 0; /* Oculta el texto al establecer el tamaño de fuente en 0 */
+}
 
-.header2 .bi{
+header.header2 h2::before {
+  content: "\f015"; /* Código del icono que desees mostrar (puedes cambiarlo) */
+  font-family: "Font Awesome"; /* Asegúrate de tener la fuente de los iconos cargada */
+  font-size: 24px; /* Tamaño de fuente para el icono */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* Estilos iniciales del header (sin la clase "header2") */
+/* ... */
+
+/* Estilos para ocultar el texto en header2 y mostrar solo los iconos */
+header.header2 h2 {
+  font-size: 0; /* Esto oculta el texto */
+}
+
+header.header2 h2 i {
+  font-size: 24px;
+  /* Ajusta el tamaño del icono */
+  /* Otros estilos para los iconos si los necesitas */
+}
+
+
+
+.header2.scrolled {
+  background-color: rgba(12, 62, 91, 0.9); /* Color de fondo con transparencia al hacer scroll */
+}
+
+.header2:not(.scrolled) {
+  background-color: var(--color-mediumLight); /* Fondo de color al no hacer scroll */
+}
+
+/* Estilos para los elementos h3 dentro del header2 */
+.header2 h3 {
+  background-color: var(--color-mediumDark); /* Color de fondo deseado para los h3 */
+  padding: 5px; /* Puedes ajustar el padding según tus necesidades */
+  border-radius: 50%; /* Puedes agregar bordes redondeados si lo deseas */
+  color: #fff; /* Color del texto dentro de los h3 */
+}
+
+.header2 h2 {
+  display: none;
+}
+
+.header2 .bi {
   display: flex;
   justify-content: space-evenly;
   font-size: 24px;
   transition: all 600ms;
 }
 
-.header2 .logo01{
-  width: 30px;   
+.header2 .logo01 {
+  width: 30px;
   border-radius: 50%;
- float: left;
+  float: left;
   margin: 20px;
   margin-top: 15px;
   transition: all 300ms;
   filter: drop-shadow(0px 5px 5px rgb(23, 24, 24));
   animation: none;
 }
+
+
+
+.header2.scrolled {
+  background-color: #0C3E5B;
+}
+
+.header2.scrolled .logo {
+  transform: scale(0.8);
+}
+
+.nav-menu {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px;
+  transition: opacity 0.3s ease;
+}
+
+.nav-link:hover {
+  opacity: 0.8;
+}
+
+.active {
+  text-decoration: underline;
+}
+/* Estilos para tema noche */
+.tema-noche {
+  background-color: #1F1C2C;
+  color: #fff;
+}
+
+.tema-noche .nav-link {
+  color: #fff;
+}
+
+
+
+
 
 #contact.section{
   background-color: var(--color-intenseLight);
@@ -241,11 +338,12 @@ header .oculto{
 }
 
 .yo{
-  width: 100%; 
+  width: 400px; 
   padding: 10px;
   border: width 80px;
   border-style: solid;
   border-color: var(--color-lightDark);
+  min-width: 50%;
   max-width: 400px;
   border-radius: 50%;
   margin: auto;
@@ -301,7 +399,6 @@ figure{
   background-color:rgba(122, 114, 155, 0.3);
   border-radius: 30px;
   padding-top: 100px;
-  margin: 0;
   margin-bottom: 60px;
   margin-top: 150px;
   min-height: 100vh;
@@ -336,9 +433,9 @@ figure{
   max-width: 200px;
   padding: 15px 15px 20px 15px;
   border-radius: 25px;
-  background-color:var(--color-intenseDark);
+  background-color:var(--color-lightDark);
   color: var(--color-lightLight);
-  border-style: double;
+  border-style: hidden;
   border-color: var(--color-lightDark);
   font-size: 20px;   
   margin: auto;
@@ -346,7 +443,8 @@ figure{
   transition: all 600ms;
 }
 .enlace1:hover {
-  background-color: var(--color-intenseLight);
+  background-color: var(--color-mediumLight);
+  color: var(--background-dark);
   padding: 18px 18px 23px 18px;
   border-radius: 25px;
   transition: all 600ms; 
@@ -373,17 +471,23 @@ figure{
 footer{
   background-color:var(--color-mediumLight);
   color:var(--color-mediumDark);
-  padding: 10px;
-  padding-bottom: 0;
- text-align: center;
-  border-radius: 20px 20px 0 0 ;
-  box-shadow: 0px 0px 10px 15px #5f5f5f;
-}
+  display: flex;
+  flex-direction: column-reverse;
+  margin-bottom: 0;
 
+  text-align: center;
+  justify-content: center;
+  border-radius: 20px 20px 0 0 ;
+  box-shadow: 0px 0px 15px 5px #5f5f5f;
+}
+footer a.enlace1
+{
+margin-bottom: 40px;
+}
 .cv{
     padding: 15px;
     border-radius:15px;
-    background-color:#af599e;
+    background-color:#161416;
     border-width: 0px;
     font-size: 20px;
 }
@@ -452,7 +556,7 @@ body .images {
   align-items: stretch;
   overflow: hidden;
   min-width: 600px;
-  max-width: 1200px;
+  max-height: 85vh;
   width: calc(100% - 100);
   height: 600px;
   width: 1100px;
@@ -537,11 +641,13 @@ body .images .image .label .info .main{
   body .images{
     height:80vh;
 }
+}
+
 
 @media screen and (max-width: 900px) {
   body .images{
     height:70vh;
-}
+}}
 @media screen and (max-width: 718px) {
   body .images{
       min-width: 520px;
@@ -575,4 +681,113 @@ body .images .image:nth-child(3) {
 body .images .image:nth-child(2) {
   display: none;
 }
-}}}
+}
+/*funcionamiento del boton de tema*/
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 64px;
+  height: 34px;
+  
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #73C0FC;
+  transition: .4s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 30px;
+  width: 30px;
+  border-radius: 20px;
+  left: 2px;
+  bottom: 2px;
+  z-index: 2;
+  background-color: #e8e8e8;
+  transition: .4s;
+}
+
+.moon svg {
+  position: absolute;
+  top: 6px;
+  left: 36px;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+}
+
+.sun svg {
+  fill: #73C0FC;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+}
+
+.moon svg {
+  animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.sun svg {
+  animation: tilt 5s linear infinite;
+}
+
+@keyframes tilt {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.input:checked + .slider {
+  background-color: #183153;
+}
+
+.input:focus + .slider {
+  box-shadow: 0 0 1px #183153;
+}
+
+.input:checked + .slider:before {
+  transform: translateX(30px);
+}
+
+
+
+
+
+  
