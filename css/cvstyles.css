@@ -178,7 +178,7 @@ header.header2 h2 {
 header.header2 h2::before {
   content: "\f015"; /* Código del icono que desees mostrar (puedes cambiarlo) */
   font-family: "Font Awesome"; /* Asegúrate de tener la fuente de los iconos cargada */
-  font-size: 24px; /* Tamaño de fuente para el icono */
+  font-size: 20px; /* Tamaño de fuente para el icono */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -791,48 +791,3 @@ body .images .image:nth-child(2) {
 
 
 
-
-  /* Estilos para pantallas con un ancho máximo de 600px */
-@media (max-width: 600px) {
-  .switch {
-    /* Cambia el tamaño del botón para que se ajuste mejor a pantallas pequeñas */
-    width: 60px;
-    height: 35px;
-  }
-
-  /* Ajusta el tamaño del icono de luna y sol para pantallas pequeñas */
-  .moon svg, .sun svg {
-    width: 20px;
-    height: 20px;
-  }
-}
-
-/* Estilos para pantallas con un ancho máximo de 768px */
-@media (max-width: 768px) {
-  .switch {
-    /* Cambia el tamaño del botón para que se ajuste mejor a pantallas medianas */
-    width: 70px;
-    height: 35px;
-  }
-
-  /* Ajusta el tamaño del icono de luna y sol para pantallas medianas */
-  .moon svg, .sun svg {
-    width: 25px;
-    height: 25px;
-  }
-}
-
-/* Estilos para pantallas con un ancho máximo de 1024px */
-@media (max-width: 1024px) {
-  .switch {
-    /* Cambia el tamaño del botón para que se ajuste mejor a pantallas grandes */
-    width: 70px;
-    height: 35px;
-  }
-
-  /* Ajusta el tamaño del icono de luna y sol para pantallas grandes */
-  .moon svg, .sun svg {
-    width: 30px;
-    height: 30px;
-  }
-}
