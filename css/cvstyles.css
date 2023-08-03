@@ -124,6 +124,7 @@ header{
  background-color: var(--color-intenseLight);
   box-shadow: 0 0 10px 0 #5f5f5f;
   font-size: 28px;
+  color: var(--color-fuente);
 }
 header .oculto{
   display: none;
@@ -265,6 +266,7 @@ header.header2 h2 i {
 
 .active {
   text-decoration: underline;
+  color: var(--color-lightLight);
 }
 /* Estilos para tema noche */
 .tema-noche {
@@ -309,7 +311,7 @@ header.header2 h2 i {
 }
 
 .logo01{
-  width: 40px;   
+  width: 60px;   
   border-radius: 50%;
   float: left;
   overflow: hidden;
@@ -443,7 +445,7 @@ figure{
   transition: all 600ms;
 }
 .enlace1:hover {
-  background-color: var(--color-mediumLight);
+  background-color: var(--color-lightLight);
   color: var(--background-dark);
   padding: 18px 18px 23px 18px;
   border-radius: 25px;
@@ -501,8 +503,8 @@ margin-bottom: 40px;
 .active{
   text-decoration: underline;
   align-items: center;
-  color: rgb(2, 44, 61);
-  text-decoration: underline #0f0f0f;
+  color:var(--color-intenseDark);
+  text-decoration: underline var(--color-intenseDark);
   transition: all 300ms; 
 }
 
@@ -790,4 +792,47 @@ body .images .image:nth-child(2) {
 
 
 
-  
+  /* Estilos para pantallas con un ancho máximo de 600px */
+@media (max-width: 600px) {
+  .switch {
+    /* Cambia el tamaño del botón para que se ajuste mejor a pantallas pequeñas */
+    width: 60px;
+    height: 35px;
+  }
+
+  /* Ajusta el tamaño del icono de luna y sol para pantallas pequeñas */
+  .moon svg, .sun svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Estilos para pantallas con un ancho máximo de 768px */
+@media (max-width: 768px) {
+  .switch {
+    /* Cambia el tamaño del botón para que se ajuste mejor a pantallas medianas */
+    width: 70px;
+    height: 35px;
+  }
+
+  /* Ajusta el tamaño del icono de luna y sol para pantallas medianas */
+  .moon svg, .sun svg {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+/* Estilos para pantallas con un ancho máximo de 1024px */
+@media (max-width: 1024px) {
+  .switch {
+    /* Cambia el tamaño del botón para que se ajuste mejor a pantallas grandes */
+    width: 70px;
+    height: 35px;
+  }
+
+  /* Ajusta el tamaño del icono de luna y sol para pantallas grandes */
+  .moon svg, .sun svg {
+    width: 30px;
+    height: 30px;
+  }
+}
