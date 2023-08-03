@@ -34,7 +34,7 @@ function isInternalLinkActive() {
 
 // Función para cambiar el fondo del header según la posición del scroll y los enlaces internos activos
 function updateHeaderScroll() {
-  if (window.scrollY > 100 || isInternalLinkActive()) {
+  if (window.scrollY > 10 || isInternalLinkActive()) {
     header.classList.add("header2");
   } else {
     header.classList.remove("header2");
