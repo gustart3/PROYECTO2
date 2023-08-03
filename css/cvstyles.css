@@ -229,7 +229,7 @@ header.header2 h2 i {
   background-color: var(--color-intenseLight);
   color: var(--light);
   margin: 0;
-  margin-bottom: 100px;
+  margin-bottom: 120px;
   margin-top: 100px;
   margin-left: 12%;
   min-height: 50vmax;
@@ -242,10 +242,11 @@ header.header2 h2 i {
   }
 
   #contact.section {
+    display:flex;
     margin: 0;
     padding-bottom: 10%;
     margin-bottom: 100px;
-    margin-top: 150px;
+    margin-top: 50px;
     margin-left: 12%;
     min-height: 50vmax;
     height: 100%;
