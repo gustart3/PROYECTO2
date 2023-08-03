@@ -1,18 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Edu+SA+Beginner:wght@400;700&family=Lato:wght@400;700&display=swap');
+
+
+
 :root {
   --primary-color: #0C3E5B;
   --secondary-color: #1A6081;
   --accent-color: #BC9AB3;
-  --background-light: #BC9AB3;
+  --background-light: #d8cfd6;
   --background-dark: #1F1C2C;
   --text-light: #1F1C2C;
   --text-dark: #BC9AB3;
   --btn-background: #70436E;
+  --color-fuente: #ffffff;
+  --color-fondo: #000;
+  --color-intenseDark: #1F1C2C;
+  --color-mediumDark: #0C3E5B;
+  --color-lightDark: #5E365E;
+  --color-intenseLight: #1A6081;
+  --color-mediumLight: #BC9AB3;
+  --color-lightLight: #E8D9E4;
 }
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  height: 100vh;
+  align-items: center;
+  font-family: 'Caveat', cursive;  
+  font-size: 28px;
+  line-height: 1.2;
+  text-align: center;
+  transition: all 0.5s;
+  background: var(--color-lightLight);
+  color: var(--color-intenseDark);
 }
+
+
 
 /* Estilos para el modo diurno */
 body.light-mode {
@@ -26,143 +48,64 @@ body.dark-mode {
   color: var(--text-dark);
 }
 
-/* Contenedor del header */
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--primary-color);
-  color: #fff;
-  padding: 10px;
-}
+/* Resto de estilos que no necesitan cambios */
 
-/* Logo o título del sitio */
-.header-logo {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-/* Estilos para la barra de navegación */
-.nav-menu {
-  display: flex;
-  gap: 20px;
-}
-
-.nav-link {
-  color: #fff;
-  text-decoration: none;
-  padding: 8px;
-  transition: opacity 0.3s ease, color 0.3s ease;
-}
-
-
-.nav-link:hover {
-  opacity: 0.8;
-  background-color: var(--secondary-color);
-  border-radius: 5px;
-}
-
-/*mio*/
-
-a{
+a {
   color: inherit;
   text-decoration: none;
- }
-
- a:hover {
-  background-color: var(--color-fuente);
-  padding:8px;
-  padding-bottom: 8px;
-  border-radius: 20px 20px;
-  transition: all 400ms;
-} 
-
-h1{
-    font-size: 36px;
-    padding-bottom: 40px;
 }
 
-h2{  
-  padding-top:10px;
-  font-size: 28px;
+a:hover {
+  background-color: var(--color-fuente);
+  padding: 8px;
+  padding-bottom: 8px;
+  border-radius: 20px;
+  transition: all 400ms;
+}
+
+h1 {
+  font-size: 36px;
+  padding-bottom: 40px;
+}
+
+h2 {
+  font-family: 'Edu SA Beginner', cursive;
+  padding-top: 10px;
+  font-size: 32px;
   transition: all 300ms;
 }
 
-p{
+p {
   margin: 10px;
   padding-bottom: 20px;
   font-family: 'Edu SA Beginner', cursive;
 }
-a.enlace1{
+
+a.enlace1 {
   margin-top: 50px;
 }
-
-
-
-
-
-
-
-/* Este max-width es para que el contenido no se "estire" demasiado hacia los costados y
-el margin: auto; para tenerlo centrado fácilmente ;)*/
-main {
-  max-width: 1200px;
-  margin:auto;  
-}
-
-header{
-  display:flex;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-  height: 90px;
-  padding: 15px;
-  position: fixed;
-  top: 0;
-  left: 0;
- background-color: var(--color-intenseLight);
-  box-shadow: 0 0 10px 0 #5f5f5f;
-  font-size: 28px;
-  color: var(--color-fuente);
-}
-header .oculto{
-  display: none;
-}
-
-
-/*todo el cuerpo del inicio, imagen y texto*/
- #home{
-  width: 100%;
-  display: inline-flex;
-  padding-top: 100px;
-  justify-content: space-evenly;
-  margin: auto;
-  transition: all 300ms;
-}
-
 
 /* Estilos para el header2 */
 .header2 {
   width: 100%;
   margin: auto;
   background-color: transparent;
-  transition: background-color 0.3s ease; 
-  color: var(--color-mediumDark);
+  transition: background-color 0.3s ease;
+  color: var(--color-lightDark);
   opacity: 90%;
   position: fixed;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   height: 50px;
   padding: 20px;
   background-color: #1F1C2C;
   color: #fff;
-  transition: background-color 0.3s ease;
   transition: all 300ms;
   box-shadow: 0 5px 5px rgba(23, 24, 24, 0.5);
   z-index: 3;
 }
+
 /* Estilo para ocultar el texto en el header2 */
 .header2 a .texto {
   display: none;
@@ -172,48 +115,44 @@ header .oculto{
 header.header2 h2 {
   display: none;
   position: relative;
-  font-size: 0; /* Oculta el texto al establecer el tamaño de fuente en 0 */
 }
 
 header.header2 h2::before {
-  content: "\f015"; /* Código del icono que desees mostrar (puedes cambiarlo) */
-  font-family: "Font Awesome"; /* Asegúrate de tener la fuente de los iconos cargada */
-  font-size: 20px; /* Tamaño de fuente para el icono */
+  content: "\f015";
+  font-family: "Font Awesome";
+  font-size: 20px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 /* Estilos iniciales del header (sin la clase "header2") */
 /* ... */
 
 /* Estilos para ocultar el texto en header2 y mostrar solo los iconos */
 header.header2 h2 {
-  font-size: 0; /* Esto oculta el texto */
+  font-size: 0;
 }
 
 header.header2 h2 i {
   font-size: 24px;
-  /* Ajusta el tamaño del icono */
-  /* Otros estilos para los iconos si los necesitas */
 }
 
-
-
 .header2.scrolled {
-  background-color: rgba(12, 62, 91, 0.9); /* Color de fondo con transparencia al hacer scroll */
+  background-color: rgba(12, 62, 91, 0.9);
 }
 
 .header2:not(.scrolled) {
-  background-color: var(--color-mediumLight); /* Fondo de color al no hacer scroll */
+  background-color: var(--color-mediumLight);
 }
 
 /* Estilos para los elementos h3 dentro del header2 */
 .header2 h3 {
-  background-color: var(--color-mediumDark); /* Color de fondo deseado para los h3 */
-  padding: 5px; /* Puedes ajustar el padding según tus necesidades */
-  border-radius: 50%; /* Puedes agregar bordes redondeados si lo deseas */
-  color: #fff; /* Color del texto dentro de los h3 */
+  background-color: var(--color-mediumDark);
+  padding: 5px;
+  border-radius: 50%;
+  color: #fff;
 }
 
 .header2 h2 {
@@ -237,8 +176,6 @@ header.header2 h2 i {
   filter: drop-shadow(0px 5px 5px rgb(23, 24, 24));
   animation: none;
 }
-
-
 
 .header2.scrolled {
   background-color: #0C3E5B;
@@ -268,6 +205,7 @@ header.header2 h2 i {
   text-decoration: underline;
   color: var(--color-lightLight);
 }
+
 /* Estilos para tema noche */
 .tema-noche {
   background-color: #1F1C2C;
@@ -278,11 +216,16 @@ header.header2 h2 i {
   color: #fff;
 }
 
+#home{
+  width: 100%;
+  display: inline-flex;
+  padding-top: 100px;
+  justify-content: space-evenly;
+  margin: auto;
+  transition: all 300ms;
+}
 
-
-
-
-#contact.section{
+#contact.section {
   background-color: var(--color-intenseLight);
   color: var(--light);
   margin: 0;
@@ -290,15 +233,15 @@ header.header2 h2 i {
   margin-top: 100px;
   margin-left: 12%;
   min-height: 50vmax;
-  
-  width: 80%; 
+  width: 80%;
 }
 
-@media (max-width:1000px) {
-  #home{
+@media (max-width: 1024px) {
+  #home {
     display: inline-block;
   }
-   #contact.section{
+
+  #contact.section {
     margin: 0;
     padding-bottom: 10%;
     margin-bottom: 100px;
@@ -307,40 +250,40 @@ header.header2 h2 i {
     min-height: 50vmax;
     height: 100%;
     width: 80%;
-  } 
+  }
 }
 
-.logo01{
-  width: 60px;   
+.logo01 {
+  width: 60px;
   border-radius: 50%;
   float: left;
   overflow: hidden;
   transition: all 300ms;
   filter: drop-shadow(0px 5px 5px rgb(23, 24, 24));
   animation: rotar 3s linear infinite;
-
 }
-@keyframes rotar{
-  from{
-    transform: rotateY(360deg); 
+
+@keyframes rotar {
+  from {
+    transform: rotateY(360deg);
   }
-   to{
+  to {
     transform: rotateY('-180deg');
-   }
+  }
 }
 
 #inicio {
   display: flex;
   flex-wrap: wrap;
- margin-top: 100px;
+  margin-top: 100px;
   min-height: 100vh;
   height: 100%;
   width: 100%;
   overflow: hidden;
 }
 
-.yo{
-  width: 400px; 
+.yo {
+  width: 400px;
   padding: 10px;
   border: width 80px;
   border-style: solid;
@@ -351,20 +294,17 @@ header.header2 h2 i {
   margin: auto;
 }
 
-.cuerpo{
+.cuerpo {
   display: flex;
   flex-direction: column;
-  padding:5%;
+  padding: 2%;
   padding-top: 50px;
-  /*border-radius: 20px;*/
-  align-self: flex-end;
-  width: 100%;
-  /*background-color: cadetblue;*/
+  width: 90%;
   align-self: end;
   margin: auto;
 }
 
-#CV{
+#CV {
   margin: 200px;
   padding: 30px;
   padding-bottom: 0;
@@ -373,32 +313,30 @@ header.header2 h2 i {
   justify-content: center;
 }
 
-/* Para quitar los puntos a los items de listas */
-ul {
-    list-style: none;
-}
 
-.logo{
+.logo {
   margin-top: 10px;
-  width:60px;
+  width: 60px;
   max-width: 100px;
   padding: 5px;
   z-index: -3;
   transition: all 300ms;
 }
-.logo:hover{
+
+.logo:hover {
   transform: translateY(-20px);
   transition: all 300ms;
 }
 
-figure{
+figure {
   display: flex;
   justify-content: center;
   margin: auto;
+  padding-left: 5%;
 }
 
 #contact {
-  background-color:rgba(122, 114, 155, 0.3);
+  background-color: rgba(122, 114, 155, 0.3);
   border-radius: 30px;
   padding-top: 100px;
   margin-bottom: 60px;
@@ -407,21 +345,22 @@ figure{
   height: 400px;
   width: 100%;
   box-shadow: 0px 0px 15px 0px #5f5f5f;
-  
 }
-#myself{
+
+#myself {
   padding-bottom: 30px;
 }
 
-.gif-menu{ display:flex;  
+.gif-menu {
+  display: flex;
 }
 
-.enlace{
+.enlace {
   text-align: center;
   max-width: 200px;
   padding: 15px 15px 20px 15px;
-  border-radius: 25px 25px 0 0 ;
-  background-color:var(--color-intenseDark);
+  border-radius: 25px 25px 0 0;
+  background-color: var(--color-intenseDark);
   color: var(--color-intenseLight);
   border-style: double;
   border-color: var(--color-lightDark);
@@ -430,268 +369,209 @@ figure{
   margin-top: 20px;
 }
 
-.enlace1{
+.enlace1 {
   text-align: center;
   max-width: 200px;
   padding: 15px 15px 20px 15px;
   border-radius: 25px;
-  background-color:var(--color-lightDark);
+  background-color: var(--color-lightDark);
   color: var(--color-lightLight);
   border-style: hidden;
   border-color: var(--color-lightDark);
-  font-size: 20px;   
+  font-size: 20px;
   margin: auto;
   margin-top: 20px;
   transition: all 600ms;
 }
+
 .enlace1:hover {
   background-color: var(--color-lightLight);
   color: var(--background-dark);
   padding: 18px 18px 23px 18px;
   border-radius: 25px;
-  transition: all 600ms; 
-} 
+  transition: all 600ms;
+}
 
 .tabset > input[type="radio"] {
   position: absolute;
   left: -200vw;
 }
 
-/*esto controla las visivilidad de las pestañas*/
 .tabset .tab-panel {
-  display: none 
-} 
-.tabset > input:first-child:checked~ .tab-panels > .tab-panel:first-child,
-.tabset > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2),
-.tabset > input:nth-child(5):checked ~ .tab-panels > .tab-panel:nth-child(3),
-.tabset > input:nth-child(7):checked ~ .tab-panels > .tab-panel:nth-child(4)
- {
-  display:inline-block;
+  display: none;
+}
+
+.tabset > input:first-child:checked~.tab-panels>.tab-panel:first-child,
+.tabset > input:nth-child(3):checked~.tab-panels>.tab-panel:nth-child(2),
+.tabset > input:nth-child(5):checked~.tab-panels>.tab-panel:nth-child(3),
+.tabset > input:nth-child(7):checked~.tab-panels>.tab-panel:nth-child(4) {
+  display: inline-block;
   justify-content: space-between;
 }
 
-footer{
-  background-color:var(--color-mediumLight);
-  color:var(--color-mediumDark);
+footer {
+  background-color: var(--color-mediumLight);
+  color: var(--color-mediumDark);
   display: flex;
   flex-direction: column-reverse;
   margin-bottom: 0;
-
   text-align: center;
   justify-content: center;
-  border-radius: 20px 20px 0 0 ;
+  border-radius: 20px 20px 0 0;
   box-shadow: 0px 0px 15px 5px #5f5f5f;
 }
-footer a.enlace1
-{
-margin-bottom: 40px;
-}
-.cv{
-    padding: 15px;
-    border-radius:15px;
-    background-color:#161416;
-    border-width: 0px;
-    font-size: 20px;
+
+footer a.enlace1 {
+  margin-bottom: 40px;
 }
 
-*, *:before, *:after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-.active{
-  text-decoration: underline;
-  align-items: center;
-  color:var(--color-intenseDark);
-  text-decoration: underline var(--color-intenseDark);
-  transition: all 300ms; 
-}
-
-#about {
-  background-color: grey;
-  height: 100%;
-  width: 100%;
-}
-
-#contact {
-  height: 100%;
-  width: 100%;
-}
-/*fin de la prueba*/
-#extras{
-  margin-top: 100px;
+.cv {
+  padding: 15px;
+  border-radius: 15px;
   display: flex;
-  justify-content: center;
-  padding-bottom: 30px;
-}
-
-:root{
-  --dark:#333;
-  --light:#FFF;
-  --color-intenseDark:#1F1C2C;
-  --color-mediumDark:#0C3E5B;
-  --color-lightDark:#5E365E;
-  --color-intenseLight:#1A6081;
-  --color-mediumLight:#BC9AB3;
-  --color-lightLight:#E8D9E4;
-  --color-fuente: #ffffff;
-  --color-fondo: #000;
-}
-
-body{
-  height: 100vh;
   align-items: center;
-  font-family: 'Caveat', cursive;
-  font-size: 28px;
-  line-height: 1.2;
-  text-align: center;
-  transition: all 0.5s;
-  background: var(--color-lightLight);
+  margin: auto;
+  margin-top: 15px;
+}
+
+.cv img {
+  width: 30px;
+  margin-right: 10px;
+}
+
+/* Agregamos un estilo para los íconos del footer */
+footer .bi {
+  font-size: 24px;
+  margin: 10px;
+  color: var(--color-mediumDark);
+}
+
+/* Estilo para el enlace de tema oscuro en el footer */
+footer .theme-switch {
+  cursor: pointer;
+}
+
+/* Agregamos estilos para el enlace de tema oscuro cuando está activo */
+footer .theme-switch.active {
   color: var(--color-intenseDark);
 }
 
-body .images {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: stretch;
-  overflow: hidden;
-  min-width: 600px;
-  max-height: 85vh;
-  width: calc(100% - 100);
-  height: 600px;
-  width: 1100px;
-}
-
-body .images .image {
-  position: relative;
-  overflow: hidden;
-  min-width: 50px;
-  margin: 10px;
-  background-size: auto 100%;
-  background-position: center;
+/* Estilos para los botones de modo oscuro en el footer */
+footer .dark-mode-btn {
+  background-color: var(--color-mediumDark);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
   cursor: pointer;
-  transition: 0.5s cubic-bezier(0.1,0.1,0.1,0.1);  
-}
- 
-body .images .image.active {
-  flex-grow: 100000;
-  scale: (1.2);
-  max-width: 600px;
-  margin: 0;
-  border-radius: 25px;
-  background-size: auto 110%;
-  box-shadow: px 0px 5px 0px #5f5f5f;
 }
 
-body .images .image.active .label{
-  background: var(--dark);
-  opacity: 80%;
-  padding: 10px;
-  border-radius: 50px;
-  bottom: 15px;
-  left: 15px;
-  right: 15px;
+/* Estilos para el botón de modo claro en el footer */
+footer .light-mode-btn {
+  background-color: var(--background-light);
+  color: var(--text-light);
 }
 
-body .images .image:not(.active){
-flex-grow: 1;
-border-radius: 25px;
-
+/* Agregamos estilos para el enlace de contacto en el footer */
+footer .contact-link {
+  color: var(--color-mediumDark);
 }
 
-body .images .image:not(.active) .label{
-  bottom: 10px;
-  left: 10px;
+/* Estilos para el encabezado del modo oscuro */
+.dark-mode .header2 {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
 }
 
-body .images .image:not(.active) .label .info{
- display: none;
+/* Estilos para el encabezado del modo claro */
+.light-mode .header2 {
+  background-color: var(--background-light);
+  color: var(--text-light);
 }
 
-body .images .image .label{
-  display: flex;
-  position: absolute;
-}
-
-body .images .image .label .icon {
-  font-size: 1.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: var(--light);
-  min-width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  color: var(--dark);
-}
-
-body .images .image .label .info{
-  display: flex;
-  flex-direction: column;
-  margin-left: 10px;
+.light-mode #contact.section {
+  background-color: var(--color-intenseLight);
   color: var(--light);
+  margin: 0;
+  margin-bottom: 100px;
+  margin-top: 100px;
+  margin-left: 12%;
+  min-height: 50vmax;
+  width: 80%;
 }
 
-body .images .image .label .info .main{
+.dark-mode #contact.section {
+  background-color: var(--color-mediumDark);
+  color: var(--light);
+  margin: 0;
+  margin-bottom: 100px;
+  margin-top: 100px;
+  margin-left: 12%;
+  min-height: 50vmax;
+  width: 80%;
+}
+
+
+
+
+
+
+
+
+body.light-mode {
+  background-color: var(--background-light);
+  color: var(--text-light);
+}
+
+body.dark-mode {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+/* Estilos para el encabezado */
+header{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--color-lightDark);
+  color: #fff;
+  padding: 10px;
+ 
+}
+
+.header-logo {
+  font-size: 24px;
   font-weight: bold;
-  font-size: 1.2rem; 
 }
 
-@media screen and (max-width: 1300px) {
-  body .images{
-    height:80vh;
-}
-}
-
-
-@media screen and (max-width: 900px) {
-  body .images{
-    height:70vh;
-}}
-@media screen and (max-width: 718px) {
-  body .images{
-      min-width: 520px;
-}
-body .images .image:nth-child(5) {
-  display: none;
-}
+.nav-menu {
+  display: flex;
+  gap: 20px;
 }
 
-@media screen and (max-width: 638px) {
-  body .images{
-      min-width: 440px;
-}
-body .images .image:nth-child(4) {
-  display: none;
-}
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px;
+  transition: opacity 0.3s ease;
 }
 
-@media screen and (max-width: 538px) {
-  body .images{
-      min-width: 360px;
+.nav-link:hover {
+  opacity: 0.8;
 }
-body .images .image:nth-child(3) {
-  display: none;
+
+.active {
+  text-decoration: underline;
+  color: var(--color-lightLight);
 }
-}
-@media screen and (max-width: 478px) {
-  body .images{
-      min-width: 280px;
-}
-body .images .image:nth-child(2) {
-  display: none;
-}
-}
-/*funcionamiento del boton de tema*/
+
+/* Estilos para el modo nocturno */
 .switch {
   font-size: 17px;
   position: relative;
   display: inline-block;
   width: 64px;
   height: 34px;
-  
 }
 
 .switch input {
@@ -776,18 +656,224 @@ body .images .image:nth-child(2) {
   }
 }
 
-.input:checked + .slider {
+.switch .input:checked + .slider {
   background-color: #183153;
 }
 
-.input:focus + .slider {
+.switch .input:focus + .slider {
   box-shadow: 0 0 1px #183153;
 }
 
-.input:checked + .slider:before {
+.switch .input:checked + .slider:before {
   transform: translateX(30px);
+}
+
+/* Galería de imágenes */
+
+#extras{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.images {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  overflow: hidden;
+  min-width: 600px;
+  max-height: 80vh;
+  width: calc(100% - 100);
+  height: 600px;
+  width: 1100px;
+}
+
+.images .image {
+  position: relative;
+  overflow: hidden;
+  min-width: 50px;
+  margin: 10px;
+  background-size: auto 100%;
+  background-position: center;
+  cursor: pointer;
+  transition: 0.5s cubic-bezier(0.1, 0.1, 0.1, 0.1);
+}
+
+.images .image.active {
+  flex-grow: 100000;
+  scale: (1.2);
+  max-width: 600px;
+  margin: 0;
+  border-radius: 25px;
+  background-size: auto 110%;
+  box-shadow: px 0px 5px 0px #5f5f5f;
+}
+
+.images .image.active .label {
+  background-color: var(--color-fondo);
+  opacity: 50%;
+  padding: 10px;
+  border-radius: 50px;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+
+}
+
+.images .image:not(.active) {
+  flex-grow: 1;
+  border-radius: 25px;
+}
+
+.images .image:not(.active) .label {
+  bottom: 10px;
+  left: 10px;
+}
+
+.images .image .label {
+  display: flex;
+  position: absolute;
+}
+
+.images .image .label .icon {
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--light);
+  min-width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--dark);
+}
+
+.images .image .label .info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  color: var(--light);
+}
+
+.images .image .label .info .main {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Agregamos estilos para la barra de navegación en el modo nocturno */
+.dark-mode .nav-menu {
+  display: flex;
+  gap: 20px;
+}
+
+.dark-mode .nav-link {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px;
+  transition: opacity 0.3s ease;
+}
+
+.dark-mode .nav-link:hover {
+  opacity: 0.8;
+}
+
+/* Agregamos estilos para el enlace de tema oscuro en el footer */
+.dark-mode .theme-switch {
+  color: #fff;
+}
+
+/* Agregamos estilos para los botones de modo oscuro en el footer */
+.dark-mode .dark-mode-btn {
+  background-color: var(--color-mediumDark);
+  color: #fff;
+}
+
+/* Estilos para el botón de modo claro en el footer */
+.dark-mode .light-mode-btn {
+  background-color: var(--background-light);
+  color: var(--text-light);
+}
+
+/* Agregamos estilos para el enlace de contacto en el footer */
+.dark-mode .contact-link {
+  color: var(--color-lightLight);
+}
+
+/* Estilos para el encabezado del modo oscuro */
+.dark-mode .header2 {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+/* Estilos para el encabezado del modo claro */
+.light-mode .header2 {
+  background-color: var(--background-light);
+  color: var(--text-light);
+}
+
+/* Estilos para el encabezado del modo oscuro */
+.dark-mode header {
+  background-color: var(--color-mediumDark);
+  color: var(--text-dark);
+}
+
+/* Estilos para el encabezado del modo claro */
+.light-mode header {
+  background-color: var(--color-intenseLight);
+  color: var(--text-light);
 }
 
 
 
 
+/*tamaño de la pagina*/
+
+
+@media screen and (max-width: 1300px) {
+  body .images{
+    height:90vh;
+}
+}
+
+
+@media screen and (max-width: 900px) {
+  body .images{
+    height:70vh;
+}}
+@media screen and (max-width: 718px) {
+  body .images{
+      min-width: 520px;
+}
+body .images .image:nth-child(5) {
+  display: none;
+}
+}
+
+@media screen and (max-width: 638px) {
+  body .images{
+      min-width: 440px;
+}
+body .images .image:nth-child(4) {
+  display: none;
+}
+header .texto {
+  font-size: 16px;
+}
+}
+
+@media screen and (max-width: 538px) {
+  body .images{
+      min-width: 360px;
+}
+body .images .image:nth-child(3) {
+  display: none;
+}
+}
+@media screen and (max-width: 478px) {
+  body .images{
+      min-width: 280px;
+}
+body .images .image:nth-child(2) {
+  display: none;
+}
+}
