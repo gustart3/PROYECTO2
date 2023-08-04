@@ -205,6 +205,9 @@ header.header2 h2 i {
   text-decoration: underline;
   color: var(--color-lightLight);
 }
+.light-mode .active {
+  color: #000;
+}
 
 /* Estilos para tema noche */
 .tema-noche {
@@ -486,7 +489,7 @@ footer .contact-link {
 
 /* Estilos para el encabezado del modo claro */
 .light-mode .header2 {
-  background-color: var(--background-light);
+  background-color: var(--color-intenseLight);
   color: var(--text-light);
 }
 
@@ -808,7 +811,7 @@ header{
 
 /* Estilos para el encabezado del modo claro */
 .light-mode .header2 {
-  background-color: var(--background-light);
+  background-color: var(--color-mediumLight);
   color: var(--text-light);
 }
 
