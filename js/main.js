@@ -56,7 +56,7 @@ function functionScroll() {
   let activeSectionId = null;
   for (const section of sections) {
     const rect = section.getBoundingClientRect();
-    if (rect.top <= 110 && rect.bottom >= 100) {
+    if (rect.top <= 120 && rect.bottom >= 100) {
       activeSectionId = section.getAttribute("id");
       break;
     }
@@ -99,22 +99,14 @@ function resetFocus() {
   image.forEach(i => i.classList.remove('active'));
 }
 
-//p
-const element = document.querySelector('scrolled');
-if (element) {
-  // El elemento existe, puedes acceder a su clase o aplicar modificaciones
-  console.log(element);
-  element.classList.add('clase-nueva');
-}
-//p
+
 
 window.addEventListener('scroll', function() {
   const header = document.querySelector('.header2');
-  header.classList.toggle('scrolled', window.scrollY > 0);
 });
 
+
 document.addEventListener('DOMContentLoaded', () => {
-  // Obtener el elemento del header
   const header = document.querySelector("header");
 
   // Verificar si el elemento existe antes de acceder a sus propiedades
@@ -122,3 +114,5 @@ document.addEventListener('DOMContentLoaded', () => {
     header.classList.add("header2");
   }
 });
+
+ 

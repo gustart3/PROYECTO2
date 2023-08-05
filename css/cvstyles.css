@@ -4,7 +4,7 @@
   --primary-color: #0C3E5B;
   --secondary-color: #1A6081;
   --accent-color: #BC9AB3;
-  --background-light: #d8cfd6;
+  --background-light: #f0e7ee;
   --background-dark: #1F1C2C;
   --background-darktransp: rgba(51, 48, 65, 0.6);
   --background-lighttransp: rgba(168, 167, 173, 0.6);
@@ -21,6 +21,88 @@
   --color-lightLight: #E8D9E4;
 }
 
+/* Estilos para el modo diurno */
+body.light-mode {
+  background-color: var(--background-light);
+  color: var(--text-light);
+}
+
+.light-mode header a.active {
+  text-decoration: underline;
+  color: var(--color-lightLight);
+  transform: scale(1.5);
+  animation: all 300ms;
+}
+.light-mode #contact.section {
+  background-color: var(--color-intenseLight);
+  color: var(--light);
+}
+
+body.light-mode {
+  background-color: var(--background-light);
+  color: var(--text-light);
+}
+
+.light-mode footer   {
+  background-color: var(--color-mediumLight);
+  color: #fff;
+}
+
+.light-mode .header2 {
+  background-color: var(--background-lighttransp);
+  color: var(--text-light);
+}
+
+.light-mode header {
+  background-color: var(--color-intenseLight);
+  color: var(--text-light);
+}
+
+
+/* Estilos para el modo oscuro */
+body.dark-mode {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+.dark-mode header a.active {
+  text-decoration: underline;
+  color: #FFF;
+  transform: scale(1.5);
+  animation: all 300ms;
+}
+
+.dark-mode #contact.section {
+  background-color: var(--color-mediumDark);
+  color: var(--color-fuente);
+}
+
+body.dark-mode {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+.dark-mode .section h3{
+  color: #fff;
+}
+
+.dark-mode footer  {
+  background-color: var(--color-mediumDark);
+  color: #fff;
+}
+
+.dark-mode .header2 {
+  background-color: var(--background-darktransp);
+  color: var(--text-dark);
+}
+
+.dark-mode header {
+  background-color: var(--color-mediumDark);
+  color: var(--text-dark);
+}
+
+/* Resto de estilos que no necesitan cambios */
+
 body {
   margin: 0;
   height: 100vh;
@@ -34,31 +116,16 @@ body {
   color: var(--color-intenseDark);
 }
 
-/* Estilos para el modo diurno */
-body.light-mode {
-  background-color: var(--background-light);
-  color: var(--text-light);
-}
-
-
-/* Estilos para el modo oscuro */
-body.dark-mode {
-  background-color: var(--background-dark);
-  color: var(--text-dark);
-}
-
-/* Resto de estilos que no necesitan cambios */
-
 a {
   color: inherit;
   text-decoration: none;
+  transition: all 400ms;
 }
 
 a:hover {
-  background-color: var(--color-fuente);
-  padding: 8px;
-  padding-bottom: 8px;
-  border-radius: 20px;
+  background-color: var(--color-lightLight);
+  padding: 15px 15px 15px 15px;
+  border-radius: 25px;
   transition: all 400ms;
 }
 
@@ -84,7 +151,6 @@ a.enlace1 {
   margin-top: 50px;
 }
 
-/* Estilos para el header2 */
 .header2 {
   width: 100%;
   margin: auto;
@@ -134,21 +200,6 @@ a.enlace1 {
   text-decoration: underline;
   color: var(--color-lightLight);
 }
-
-.light-mode header a.active {
-  text-decoration: underline;
-  color: var(--color-lightLight);
-  transform: scale(1.5);
-  animation: all 300ms;
-}
-
-.dark-mode header a.active {
-  text-decoration: underline;
-  color: #FFF;
-  transform: scale(1.5);
-  animation: all 300ms;
-}
-
 
 #home{
   width: 100%;
@@ -290,23 +341,9 @@ figure {
   display: flex;
 }
 
-.enlace {
-  text-align: center;
-  max-width: 200px;
-  padding: 15px 15px 20px 15px;
-  border-radius: 25px 25px 0 0;
-  background-color: var(--color-intenseDark);
-  color: var(--color-intenseLight);
-  border-style: double;
-  border-color: var(--color-lightDark);
-  font-size: 20px;
-  margin: auto;
-  margin-top: 20px;
-}
-
 .enlace1 {
   text-align: center;
-  max-width: 200px;
+  min-width: 150px;
   padding: 15px 15px 20px 15px;
   border-radius: 25px;
   background-color: var(--color-lightDark);
@@ -319,11 +356,10 @@ figure {
   transition: all 600ms;
 }
 
-.enlace1:hover {
-  background-color: var(--color-lightLight);
-  color: var(--background-dark);
-  padding: 18px 18px 23px 18px;
-  border-radius: 25px;
+a.enlace1:hover {
+  background-color:var(--color-mediumLight);
+  color: var(--color-fondo);
+  padding: 15px 15px 20px 15px;
   transition: all 600ms;
 }
 
@@ -375,39 +411,6 @@ footer a.enlace1 {
   margin-right: 10px;
 }
 
-.light-mode #contact.section {
-  background-color: var(--color-intenseLight);
-  color: var(--light);
-  margin: 0;
-  margin-bottom: 100px;
-  margin-top: 100px;
-  margin-left: 12%;
-  min-height: 50vmax;
-  width: 80%;
-}
-
-.dark-mode #contact.section {
-  background-color: var(--color-mediumDark);
-  color: var(--color-fuente);
-  margin: 0;
-  margin-bottom: 100px;
-  margin-top: 100px;
-  margin-left: 12%;
-  min-height: 50vmax;
-  width: 80%;
-}
-
-
-body.light-mode {
-  background-color: var(--background-light);
-  color: var(--text-light);
-}
-
-body.dark-mode {
-  background-color: var(--background-dark);
-  color: var(--text-dark);
-}
-
 /* Estilos para el encabezado */
 header{
   display: flex;
@@ -415,6 +418,7 @@ header{
   align-items: center;
   background-color: var(--color-lightDark);
   padding: 10px;
+
 }
 
 .header-logo {
@@ -531,9 +535,7 @@ header{
   padding: 25px;
   color: #000;
 }
-.dark-mode .section h3{
-  color: #fff;
-}
+
 
 #extras{
   display: flex;
@@ -562,7 +564,7 @@ header{
   background-size: auto 100%;
   background-position: center;
   cursor: pointer;
-  transition: 0.5s cubic-bezier(1, 0.1, 0.8, 2.1);
+  transition: 0.5s cubic-bezier(1, 0.8, 0.2, 2.1);
 }
 
 .images .image.active {
@@ -605,6 +607,10 @@ header{
   flex-grow: 1;
   border-radius: 25px;
 }
+.images .image:not(.active):hover {
+  transform: translateY(-10px);
+  transition: all 300ms;
+}
 
 .images .image:not(.active) .label {
   bottom: 10px;
@@ -644,38 +650,15 @@ header{
 }
 
 /* Agregamos estilos para el enlace de tema oscuro en el footer */
-.dark-mode footer  {
-  background-color: var(--color-mediumDark);
-  color: #fff;
-}
 
-.light-mode footer   {
-  background-color: var(--color-mediumLight);
-  color: #fff;
-}
+
 
 
 /* Estilos para el encabezado del modo oscuro funciona */
-.dark-mode .header2 {
-  background-color: var(--background-darktransp);
-  color: var(--text-dark);
-}
 
-.dark-mode header {
-  background-color: var(--color-mediumDark);
-  color: var(--text-dark);
-}
 
 /* Estilos para el encabezado del modo claro funciona */
-.light-mode .header2 {
-  background-color: var(--background-lighttransp);
-  color: var(--text-light);
-}
 
-.light-mode header {
-  background-color: var(--color-intenseLight);
-  color: var(--text-light);
-}
 
 /*tamaño de la pagina*/
 
@@ -685,11 +668,14 @@ header{
 }
 }
 
-
 @media screen and (max-width: 900px) {
   body .images{
     height:70vh;
-}}
+}
+header{
+  font-size: 18px;
+}
+}
 
 @media screen and (max-width: 718px) {
   body .images{
@@ -719,6 +705,22 @@ header .texto {
 body .images .image:nth-child(3) {
   display: none;
 }
+header a .texto {
+  display: none;
+  transition: all 600ms;
+}
+
+header h2 {
+  display: none;
+  transition: all 600ms;
+}
+
+header .bi {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 24px;
+  transition: all 600ms;
+}
 }
 @media screen and (max-width: 478px) {
   body .images{
@@ -728,3 +730,5 @@ body .images .image:nth-child(2) {
   display: none;
 }
 }
+
+ 
