@@ -99,6 +99,14 @@ function resetFocus() {
   image.forEach(i => i.classList.remove('active'));
 }
 
+//p
+const element = document.querySelector('scrolled');
+if (element) {
+  // El elemento existe, puedes acceder a su clase o aplicar modificaciones
+  console.log(element);
+  element.classList.add('clase-nueva');
+}
+//p
 
 window.addEventListener('scroll', function() {
   const header = document.querySelector('.header2');
