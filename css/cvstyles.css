@@ -29,8 +29,8 @@ body.light-mode {
 
 .light-mode header a.active {
   text-decoration: underline;
-  color: var(--color-lightLight);
-  transform: scale(1.5);
+  color: var(--color-fondo);
+  transform: scale(1.6);
   animation: all 300ms;
 }
 .light-mode #contact.section {
@@ -68,7 +68,7 @@ body.dark-mode {
 .dark-mode header a.active {
   text-decoration: underline;
   color: #FFF;
-  transform: scale(1.5);
+  transform: scale(1.6);
   animation: all 300ms;
 }
 
@@ -130,7 +130,7 @@ a:hover {
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 48px;
   padding-bottom: 40px;
 }
 
@@ -153,6 +153,7 @@ a.enlace1 {
 
 .header2 {
   width: 100%;
+  height: fit-content;
   margin: auto;
   background-color: transparent;
   transition: background-color 0.3s ease;
@@ -203,7 +204,7 @@ a.enlace1 {
 
 #home{
   width: 100%;
-  display: inline-flex;
+  display: inline-block;
   padding-top: 100px;
   justify-content: space-evenly;
   margin: auto;
@@ -221,13 +222,14 @@ a.enlace1 {
   width: 80%;
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 1024px) {
   #home {
-    display: inline-block;
+    display: inline-flex;
   }
 
   #contact.section {
     display:flex;
+    justify-content: center;
     margin: 0;
     padding-bottom: 10%;
     margin-bottom: 100px;
@@ -418,6 +420,7 @@ header{
   align-items: center;
   background-color: var(--color-lightDark);
   padding: 10px;
+  
 
 }
 
@@ -589,7 +592,6 @@ header{
 .images .image.active .label {
   background-color: rgba(22, 15, 22, 0.3);
   color: #ffffff;
- /* opacity: 50%;*/
   padding: 10px;
   border-radius: 50px;
   bottom: 15px;
@@ -648,17 +650,6 @@ header{
   font-weight: bold;
   font-size: 1.2rem;
 }
-
-/* Agregamos estilos para el enlace de tema oscuro en el footer */
-
-
-
-
-/* Estilos para el encabezado del modo oscuro funciona */
-
-
-/* Estilos para el encabezado del modo claro funciona */
-
 
 /*tamaño de la pagina*/
 
