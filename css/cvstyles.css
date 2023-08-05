@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Edu+SA+Beginner:wght@400;700&family=Lato:wght@400;700&display=swap');
 
-
-
 :root {
   --primary-color: #0C3E5B;
   --secondary-color: #1A6081;
   --accent-color: #BC9AB3;
   --background-light: #d8cfd6;
   --background-dark: #1F1C2C;
+  --background-darktransp: rgba(51, 48, 65, 0.6);
+  --background-lighttransp: rgba(168, 167, 173, 0.6);
   --text-light: #1F1C2C;
   --text-dark: #BC9AB3;
   --btn-background: #70436E;
@@ -34,13 +34,12 @@ body {
   color: var(--color-intenseDark);
 }
 
-
-
 /* Estilos para el modo diurno */
 body.light-mode {
   background-color: var(--background-light);
   color: var(--text-light);
 }
+
 
 /* Estilos para el modo oscuro */
 body.dark-mode {
@@ -106,53 +105,9 @@ a.enlace1 {
   z-index: 3;
 }
 
-/* Estilo para ocultar el texto en el header2 */
+/* Estilo para ocultar el texto en el header2 funciona */
 .header2 a .texto {
   display: none;
-}
-
-/* Estilos para ocultar el texto en header2 y mostrar solo los iconos */
-header.header2 h2 {
-  display: none;
-  position: relative;
-}
-
-header.header2 h2::before {
-  content: "\f015";
-  font-family: "Font Awesome";
-  font-size: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-/* Estilos iniciales del header (sin la clase "header2") */
-/* ... */
-
-/* Estilos para ocultar el texto en header2 y mostrar solo los iconos */
-header.header2 h2 {
-  font-size: 0;
-}
-
-header.header2 h2 i {
-  font-size: 24px;
-}
-
-.header2.scrolled {
-  background-color: rgba(12, 62, 91, 0.9);
-}
-
-.header2:not(.scrolled) {
-  background-color: var(--color-mediumLight);
-}
-
-/* Estilos para los elementos h3 dentro del header2 */
-.header2 h3 {
-  background-color: var(--color-mediumDark);
-  padding: 5px;
-  border-radius: 50%;
-  color: #fff;
 }
 
 .header2 h2 {
@@ -167,7 +122,7 @@ header.header2 h2 i {
 }
 
 .header2 .logo01 {
-  width: 30px;
+  width: 40px;
   border-radius: 50%;
   float: left;
   margin: 20px;
@@ -177,47 +132,25 @@ header.header2 h2 i {
   animation: none;
 }
 
-.header2.scrolled {
-  background-color: #0C3E5B;
-}
-
-.header2.scrolled .logo {
-  transform: scale(0.8);
-}
-
-.nav-menu {
-  display: flex;
-  gap: 20px;
-}
-
-.nav-link {
-  color: #fff;
-  text-decoration: none;
-  padding: 8px;
-  transition: opacity 0.3s ease;
-}
-
-.nav-link:hover {
-  opacity: 0.8;
-}
-
 .active {
   text-decoration: underline;
   color: var(--color-lightLight);
 }
-.light-mode .active {
-  color: #000;
+
+.light-mode header a.active {
+  text-decoration: underline;
+  color: var(--color-lightLight);
+  transform: scale(1.5);
+  animation: all 300ms;
 }
 
-/* Estilos para tema noche */
-.tema-noche {
-  background-color: #1F1C2C;
-  color: #fff;
+.dark-mode header a.active {
+  text-decoration: underline;
+  color: #FFF;
+  transform: scale(1.5);
+  animation: all 300ms;
 }
 
-.tema-noche .nav-link {
-  color: #fff;
-}
 
 #home{
   width: 100%;
@@ -289,7 +222,7 @@ header.header2 h2 i {
 .yo {
   width: 400px;
   padding: 10px;
-  border: width 80px;
+  border: width 100px;
   border-style: solid;
   border-color: var(--color-lightDark);
   min-width: 50%;
@@ -423,6 +356,7 @@ footer {
   justify-content: center;
   border-radius: 20px 20px 0 0;
   box-shadow: 0px 0px 15px 5px #5f5f5f;
+  height: 80px;
 }
 
 footer a.enlace1 {
@@ -443,56 +377,6 @@ footer a.enlace1 {
   margin-right: 10px;
 }
 
-/* Agregamos un estilo para los íconos del footer */
-footer .bi {
-  font-size: 24px;
-  margin: 10px;
-  color: var(--color-mediumDark);
-}
-
-/* Estilo para el enlace de tema oscuro en el footer */
-footer .theme-switch {
-  cursor: pointer;
-}
-
-/* Agregamos estilos para el enlace de tema oscuro cuando está activo */
-footer .theme-switch.active {
-  color: var(--color-intenseDark);
-}
-
-/* Estilos para los botones de modo oscuro en el footer */
-footer .dark-mode-btn {
-  background-color: var(--color-mediumDark);
-  color: #fff;
-  padding: 8px 16px;
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
-}
-
-/* Estilos para el botón de modo claro en el footer */
-footer .light-mode-btn {
-  background-color: var(--background-light);
-  color: var(--text-light);
-}
-
-/* Agregamos estilos para el enlace de contacto en el footer */
-footer .contact-link {
-  color: var(--color-mediumDark);
-}
-
-/* Estilos para el encabezado del modo oscuro */
-.dark-mode .header2 {
-  background-color: var(--background-dark);
-  color: var(--text-dark);
-}
-
-/* Estilos para el encabezado del modo claro */
-.light-mode .header2 {
-  background-color: var(--color-intenseLight);
-  color: var(--text-light);
-}
-
 .light-mode #contact.section {
   background-color: var(--color-intenseLight);
   color: var(--light);
@@ -506,7 +390,7 @@ footer .contact-link {
 
 .dark-mode #contact.section {
   background-color: var(--color-mediumDark);
-  color: var(--light);
+  color: var(--color-fuente);
   margin: 0;
   margin-bottom: 100px;
   margin-top: 100px;
@@ -514,12 +398,6 @@ footer .contact-link {
   min-height: 50vmax;
   width: 80%;
 }
-
-
-
-
-
-
 
 
 body.light-mode {
@@ -535,12 +413,10 @@ body.dark-mode {
 /* Estilos para el encabezado */
 header{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   background-color: var(--color-lightDark);
-  color: #fff;
   padding: 10px;
- 
 }
 
 .header-logo {
@@ -548,28 +424,6 @@ header{
   font-weight: bold;
 }
 
-.nav-menu {
-  display: flex;
-  gap: 20px;
-}
-
-.nav-link {
-  color: #fff;
-  text-decoration: none;
-  padding: 8px;
-  transition: opacity 0.3s ease;
-}
-
-.nav-link:hover {
-  opacity: 0.8;
-}
-
-.active {
-  text-decoration: underline;
-  color: var(--color-lightLight);
-}
-
-/* Estilos para el modo nocturno */
 .switch {
   font-size: 17px;
   position: relative;
@@ -673,6 +527,15 @@ header{
 }
 
 /* Galería de imágenes */
+.section h3{
+  display: flex;
+  justify-content: center;
+  padding: 25px;
+  color: #000;
+}
+.dark-mode .section h3{
+  color: #fff;
+}
 
 #extras{
   display: flex;
@@ -706,8 +569,8 @@ header{
 
 .images .image.active {
   flex-grow: 100000;
-  scale: (1.2);
-  max-width: 600px;
+  scale: (1.3);
+  max-width: 500px;
   margin: 0;
   border-radius: 25px;
   background-size: auto 110%;
@@ -715,14 +578,20 @@ header{
 }
 
 .images .image.active .label {
-  background-color: var(--color-fondo);
-  opacity: 50%;
+  background-color: rgba(22, 15, 22, 0.3);
+  color: #ffffff;
+ /* opacity: 50%;*/
   padding: 10px;
   border-radius: 50px;
   bottom: 15px;
   left: 15px;
   right: 15px;
-
+  height: 50px;
+  transition: all 0.4s ;
+}
+.images .image.active .label:hover {
+ height: 120px;
+ transition: all 0.4s ;
 }
 
 .images .image:not(.active) {
@@ -733,12 +602,15 @@ header{
 .images .image:not(.active) .label {
   bottom: 10px;
   left: 10px;
+  display: none;
 }
 
 .images .image .label {
   display: flex;
   position: absolute;
 }
+
+
 
 .images .image .label .icon {
   font-size: 1.5rem;
@@ -764,74 +636,41 @@ header{
   font-size: 1.2rem;
 }
 
-/* Agregamos estilos para la barra de navegación en el modo nocturno */
-.dark-mode .nav-menu {
-  display: flex;
-  gap: 20px;
-}
-
-.dark-mode .nav-link {
-  color: #fff;
-  text-decoration: none;
-  padding: 8px;
-  transition: opacity 0.3s ease;
-}
-
-.dark-mode .nav-link:hover {
-  opacity: 0.8;
-}
-
 /* Agregamos estilos para el enlace de tema oscuro en el footer */
-.dark-mode .theme-switch {
-  color: #fff;
-}
-
-/* Agregamos estilos para los botones de modo oscuro en el footer */
-.dark-mode .dark-mode-btn {
+.dark-mode footer  {
   background-color: var(--color-mediumDark);
   color: #fff;
 }
 
-/* Estilos para el botón de modo claro en el footer */
-.dark-mode .light-mode-btn {
-  background-color: var(--background-light);
-  color: var(--text-light);
+.light-mode footer   {
+  background-color: var(--color-mediumLight);
+  color: #fff;
 }
 
-/* Agregamos estilos para el enlace de contacto en el footer */
-.dark-mode .contact-link {
-  color: var(--color-lightLight);
-}
 
-/* Estilos para el encabezado del modo oscuro */
+/* Estilos para el encabezado del modo oscuro funciona */
 .dark-mode .header2 {
-  background-color: var(--background-dark);
+  background-color: var(--background-darktransp);
   color: var(--text-dark);
 }
 
-/* Estilos para el encabezado del modo claro */
-.light-mode .header2 {
-  background-color: var(--color-mediumLight);
-  color: var(--text-light);
-}
-
-/* Estilos para el encabezado del modo oscuro */
 .dark-mode header {
   background-color: var(--color-mediumDark);
   color: var(--text-dark);
 }
 
-/* Estilos para el encabezado del modo claro */
+/* Estilos para el encabezado del modo claro funciona */
+.light-mode .header2 {
+  background-color: var(--background-lighttransp);
+  color: var(--text-light);
+}
+
 .light-mode header {
   background-color: var(--color-intenseLight);
   color: var(--text-light);
 }
 
-
-
-
 /*tamaño de la pagina*/
-
 
 @media screen and (max-width: 1300px) {
   body .images{
@@ -844,6 +683,7 @@ header{
   body .images{
     height:70vh;
 }}
+
 @media screen and (max-width: 718px) {
   body .images{
       min-width: 520px;

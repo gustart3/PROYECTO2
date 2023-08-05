@@ -4,7 +4,7 @@ function toggleMode() {
   body.classList.toggle('dark-mode');
   body.classList.toggle('light-mode');
 
-  // Guardar el modo seleccionado en localStorage
+  // Guardar el modo seleccionado 
   const currentMode = body.classList.contains('dark-mode') ? 'dark' : 'light';
   saveMode(currentMode);
 }
@@ -27,14 +27,10 @@ function saveMode(mode) {
 // Obtener el elemento del header
 const header = document.querySelector("header");
 
-// Función para verificar si hay algún enlace interno activo
-function isInternalLinkActive() {
-  return document.querySelector("a[href^='#']:active");
-}
 
 // Función para cambiar el fondo del header según la posición del scroll y los enlaces internos activos
 function updateHeaderScroll() {
-  if (window.scrollY > 10 || isInternalLinkActive()) {
+  if (window.scrollY > 10 ) {
     header.classList.add("header2");
   } else {
     header.classList.remove("header2");
@@ -49,7 +45,7 @@ document.addEventListener("click", function (event) {
   // Si el clic se originó desde un enlace interno
   if (event.target.tagName === "A" && event.target.getAttribute("href").startsWith("#")) {
     // Esperar un breve instante y luego actualizar el estado del header
-    setTimeout(updateHeaderScroll, 10);
+    setTimeout(updateHeaderScroll, 1);
   }
 });
 
@@ -60,7 +56,7 @@ function functionScroll() {
   let activeSectionId = null;
   for (const section of sections) {
     const rect = section.getBoundingClientRect();
-    if (rect.top <= 100 && rect.bottom >= 100) {
+    if (rect.top <= 110 && rect.bottom >= 100) {
       activeSectionId = section.getAttribute("id");
       break;
     }
@@ -80,7 +76,6 @@ function functionScroll() {
 document.addEventListener("DOMContentLoaded", function() {
   functionScroll(); // Llamar a la función al cargar la página para establecer el enlace activo correctamente
 });
-
 // Agregar un listener para el evento 'scroll' que llame a la función functionScroll
 window.addEventListener("scroll", functionScroll);
 window.addEventListener("resize", functionScroll);
@@ -105,20 +100,17 @@ function resetFocus() {
 }
 
 
-
-
-
-
-
 window.addEventListener('scroll', function() {
   const header = document.querySelector('.header2');
   header.classList.toggle('scrolled', window.scrollY > 0);
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  // Obtener el elemento del header
+  const header = document.querySelector("header");
 
-
-
-
-
-
-
+  // Verificar si el elemento existe antes de acceder a sus propiedades
+  if (header) {
+    header.classList.add("header2");
+  }
+});
