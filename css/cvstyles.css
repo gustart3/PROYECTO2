@@ -125,8 +125,6 @@ a.enlace1 {
   width: 40px;
   border-radius: 50%;
   float: left;
-  margin: 20px;
-  margin-top: 15px;
   transition: all 300ms;
   filter: drop-shadow(0px 5px 5px rgb(23, 24, 24));
   animation: none;
@@ -564,13 +562,22 @@ header{
   background-size: auto 100%;
   background-position: center;
   cursor: pointer;
-  transition: 0.5s cubic-bezier(0.1, 0.1, 0.1, 0.1);
+  transition: 0.5s cubic-bezier(1, 0.1, 0.8, 2.1);
 }
 
 .images .image.active {
   flex-grow: 100000;
   scale: (1.3);
-  max-width: 500px;
+  max-width: 50dvh;
+  margin: 0;
+  border-radius: 25px;
+  background-size: auto 110%;
+  box-shadow: px 0px 5px 0px #5f5f5f;
+}
+.images .first.active {
+  flex-grow: 100000;
+  scale: (1.3);
+  max-width: 120dvh;
   margin: 0;
   border-radius: 25px;
   background-size: auto 110%;
